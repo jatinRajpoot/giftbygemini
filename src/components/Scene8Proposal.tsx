@@ -85,12 +85,12 @@ export const Scene8Proposal: React.FC<Scene8Props> = ({
       transition={{ duration: 2.0 }}
       className="relative w-full h-screen flex flex-col items-center justify-center bg-black overflow-hidden z-30 select-none"
     >
-      {/* Warm Candle & Heart Glow Ambient Background */}
+      {/* Warm Ambient Background Glow */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[700px] h-[700px] bg-gradient-to-t from-amber-600/20 via-crimson/20 to-transparent rounded-full blur-[150px] animate-pulse-glow" />
       </div>
 
-      {/* Floating Candle Light Sparks / Warm Particles */}
+      {/* Floating Warm Stardust / Light Particles */}
       {hasSaidYes && (
         <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
           {Array.from({ length: 30 }).map((_, i) => {
@@ -118,7 +118,7 @@ export const Scene8Proposal: React.FC<Scene8Props> = ({
         </div>
       )}
 
-      {/* Floating Heart Lamps (Heart-Shaped Glowing Lanterns with Candle Flame) */}
+      {/* Floating Heart Lamps (Heart-Shaped Glowing Lanterns) */}
       {hasSaidYes && (
         <div className="absolute inset-0 pointer-events-none z-12 overflow-hidden">
           {Array.from({ length: 14 }).map((_, i) => {
@@ -163,28 +163,12 @@ export const Scene8Proposal: React.FC<Scene8Props> = ({
                   >
                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                   </svg>
-                  {/* Candle Flame at Center of Lamp */}
+                  {/* Lamp Center Light Glow */}
                   <div className="absolute w-2 h-3.5 bg-gradient-to-t from-orange-500 via-amber-300 to-white rounded-full blur-[0.4px] shadow-[0_0_10px_rgba(255,200,60,1)] animate-pulse" />
                 </div>
               </motion.div>
             );
           })}
-        </div>
-      )}
-
-      {/* Romantic Votive Candles at Bottom */}
-      {hasSaidYes && (
-        <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none z-18 flex items-end justify-between sm:justify-around px-2 sm:px-6 pb-2">
-          {Array.from({ length: 18 }).map((_, i) => (
-            <div key={`candle-${i}`} className="flex flex-col items-center relative">
-              {/* Candle Flame Glow Halo */}
-              <div className="w-8 h-8 -mb-5 bg-amber-400/30 rounded-full blur-md animate-pulse" />
-              {/* Candle Flame */}
-              <div className="w-2 h-3.5 bg-gradient-to-t from-amber-600 via-amber-200 to-white rounded-full shadow-[0_0_12px_rgba(255,200,80,1)] animate-pulse" />
-              {/* Candle Body / Pillar */}
-              <div className="w-3.5 sm:w-5 h-8 sm:h-12 rounded-t-sm bg-gradient-to-b from-[#f3e6d8] via-[#cca88b] to-[#7a583e] border-t border-amber-100/50 shadow-md" />
-            </div>
-          ))}
         </div>
       )}
 
@@ -216,7 +200,7 @@ export const Scene8Proposal: React.FC<Scene8Props> = ({
               <div className="relative w-full h-full rounded-lg overflow-hidden border border-gold/30">
                 <Image
                   src={item.photo.url}
-                  alt={item.photo.caption || 'Memory Photo'}
+                  alt="Memory Photo"
                   fill
                   className="object-cover"
                 />
